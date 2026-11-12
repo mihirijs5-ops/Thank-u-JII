@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f7">
+<title>For Somi ♡</title>
+<style>
+:root{--rose:#d96f9c;--deep:#8d3e68;--ink:#553747;--soft:#fff7fb;--lav:#eee8ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;background:radial-gradient(circle at 12% 12%,#ffe0ed 0,transparent 30%),radial-gradient(circle at 88% 80%,#e5dcff 0,transparent 32%),linear-gradient(135deg,#fffaf8,#fff0f7);overflow-x:hidden}
+button,input{font:inherit}
+#stars,.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float{position:absolute;bottom:-35px;opacity:.55;animation:floatUp linear infinite;font-size:20px}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.screen{min-height:100vh;display:grid;place-items:center;padding:22px;position:relative;z-index:1}
+.card{width:min(100%,800px);background:#ffffffd9;border:1px solid #fff;border-radius:28px;box-shadow:0 18px 60px #8b45671c;backdrop-filter:blur(12px)}
+.lock{max-width:430px;padding:35px 25px;text-align:center}
+.lockicon{font-size:3.2rem;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:#b36b8c;font-size:.72rem;text-align:center}
+h1,h2{font-family:Georgia,serif;font-weight:500}
+h1{font-size:clamp(2.1rem,7vw,3.4rem);color:var(--deep);margin:10px 0}
+.sub{line-height:1.7;color:#806777}
+.inputrow{display:flex;gap:8px;margin-top:22px}
+input{min-width:0;flex:1;padding:14px;border:1px solid #edc9d8;border-radius:14px;background:#fffafd;outline:none}
+input:focus{border-color:var(--deep);box-shadow:0 0 0 3px #f9dce8}
+button{border:0;border-radius:14px;padding:12px 18px;cursor:pointer;color:white;background:linear-gradient(135deg,#d978a1,#a95b89);box-shadow:0 7px 18px #a95b8933;transition:transform .2s,filter .2s}
+button:hover{transform:translateY(-2px);filter:brightness(1.04)}
+#error{min-height:22px;color:#b54f72;font-size:.9rem}
+#site{display:none;position:relative;z-index:1;padding:18px 12px 45px}
+.shell{margin:auto;padding:clamp(20px,5vw,46px);overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font:italic 1.2rem Georgia,serif;color:var(--deep)}
+.progress{font-size:.8rem;color:#a77b91}
+.nav{display:flex;gap:8px;overflow-x:auto;padding:14px 0 18px;scrollbar-width:thin}
+.nav button{white-space:nowrap;font-size:.82rem;padding:10px 13px;background:#f4e4ed;color:#89516d;box-shadow:none}
+.nav button.active{background:linear-gradient(135deg,#d978a1,#a95b89);color:white}
+.page{display:none;animation:pageIn .65s ease both;min-height:62vh}
+.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero{text-align:center;padding:24px 4px}
+.hero p{max-width:610px;margin:12px auto;line-height:1.85;color:#806777}
+.bigheart{font-size:2rem;display:inline-block;animation:heartbeat 1.4s infinite}
+@keyframes heartbeat{50%{transform:scale(1.25)}}
+.divider{text-align:center;color:#d98aaa;letter-spacing:.5em;margin:22px 0}
+.note{background:linear-gradient(135deg,#fff5f8,#f7f2ff);border:1px solid #f4dfeb;border-radius:20px;padding:21px;margin:14px 0;line-height:1.8}
+.note h2{color:var(--deep);font-size:1.4rem;margin:0 0 8px}
+.note p{margin:0;color:#705565;line-height:1.85}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tile{border-radius:18px;padding:18px 14px;text-align:center;background:#fff9fc;border:1px solid #f3e0e9;line-height:1.6}
+.tile span{display:block;font-size:1.8rem;margin-bottom:7px}
+.poem{white-space:pre-line;text-align:center;font:italic clamp(1.1rem,3.6vw,1.42rem)/2 Georgia,serif;color:#78445f;padding:22px 10px}
+.memory{text-align:center;padding:18px;background:#fff9fc;border-radius:18px;margin:12px 0;border:1px solid #f3e0e9}
+.memory b{color:var(--deep)}
+.footer{text-align:center;color:#a78b9a;font-size:.8rem;margin-top:24px}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:25px}
+.pager button:disabled{opacity:.35;cursor:not-allowed}
+.final{text-align:center;padding:40px 8px}
+.final .love{font:clamp(2rem,8vw,4rem) Georgia,serif;color:#b54f80;animation:glow 2s ease-in-out infinite alternate}
+@keyframes glow{to{text-shadow:0 0 20px #f3a6c4;transform:scale(1.035)}}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:10}
+@media(max-width:520px){.inputrow{flex-direction:column}.inputrow button{width:100%}.grid{grid-template-columns:1fr}#site{padding:10px 8px 30px}.shell{border-radius:22px}.nav{margin-right:-8px}.top{justify-content:center}.pager button{flex:1}}
+</style>
+</head>
+<body>
+<div id="stars" class="petals"></div><canvas id="confetti"></canvas>
+<section class="screen" id="lockScreen">
+ <div class="card lock">
+  <div class="lockicon">🔐💗</div><div class="eyebrow">a little universe, just for you</div>
+  <h1>For Somi ♡</h1>
+  <p class="sub">A few pages full of your little things, our memories, and a thank-you I've wanted to put into words.</p>
+  <form class="inputrow" id="passwordForm"><input id="password" type="password" placeholder="The secret password" aria-label="Password" autocomplete="off"><button type="submit">Unlock ♡</button></form>
+  <p id="error" aria-live="polite"></p><div class="footer">made by Miru, with a little extra care</div>
+ </div>
+</section>
+
+<main id="site">
+ <article class="card shell">
+  <div class="top"><div class="brand">a little something for Soumya ♡</div><div class="progress" id="progress">Page 1 of 6</div></div>
+  <nav class="nav" aria-label="Website pages">
+   <button class="active" data-page="0">♡ Start</button>
+   <button data-page="1">✿ You</button>
+   <button data-page="2">☾ Your favourites</button>
+   <button data-page="3">✎ A nazm</button>
+   <button data-page="4">∞ Us</button>
+   <button data-page="5">💗 One last thing</button>
+  </nav>
+
+  <section class="page active">
+   <div class="hero"><div class="bigheart">♡</div><div class="eyebrow">open when you need a little reminder</div><h1>Hey, Soumya.</h1>
+    <p>Ye website koi badi cheez nahi hai. Bas socha, tere baare mein jo chhoti-chhoti baatein mujhe yaad rehti hain, un sabko ek jagah rakh du. Because honestly, tu apne aap mein hi ek pretty si story hai.</p>
+   </div>
+   <div class="divider">✧ ♡ ✧</div>
+   <div class="note"><h2>Ek chhoti si baat</h2><p>Thank you for being you. Teri random baatein, tera hasna, tera “haww”, aur woh saare moments jo shayad tere liye normal honge — mere liye kaafi special ban gaye.</p></div>
+   <div class="hero"><p>Har page aaram se dekhna. Koi jaldi nahi. Aur haan, password sahi daala hai toh ab poori website dekhni padegi. 😭</p></div>
+  </section>
+
+  <section class="page">
+   <div class="hero"><div class="eyebrow">page 02 · the way i see you</div><h1>Tu, in all your little details 🌙</h1>
+    <p>Ab looks ki tareef karni hai toh kahaan se shuru karun?</p></div>
+   <div class="note"><h2>Your eyes</h2><p>Teri aankhein… sach mein chand jaisi. Kabhi kabhi lagta hai inmein dekh ke aadmi apni baat hi bhool jaaye. Aur teri smile? Bas, uska toh alag hi scene hai.</p></div>
+   <div class="grid">
+    <div class="tile"><span>🌙</span><b>Aankhein</b><br>Chand jaisi, aur apni hi duniya wali.</div>
+    <div class="tile"><span>🌷</span><b>That smile</b><br>Woh wali smile jo bina reason ke yaad aa jaati hai.</div>
+    <div class="tile"><span>✨</span><b>Cheek ka til</b><br>Itna chhota detail, par notice kiye bina raha nahi jaata.</div>
+    <div class="tile"><span>🫶</span><b>Your little expressions</b><br>Especially tera iconic “haww”.</div>
+   </div>
+   <div class="note"><h2>Aur tere baal…</h2><p>Teri zulfon ko sailaab likhu? Haan, shayad. Aur jab tu apne baal theek karti hai na, woh bhi ek alag hi scene hai. Basically, madam ke chhote se chhote details bhi yaad reh jaate hain.</p></div>
+   <div class="hero"><p>Pretty toh tu hai hi, par teri apni wali vibe bhi utni hi pyaari hai. ♡</p></div>
+  </section>
+
+  <section class="page">
+   <div class="hero"><div class="eyebrow">page 03 · things that make you, you</div><h1>Your favourite little things 🎀</h1><p>Teri pasand ki cheezein bhi yaad hain, madam.</p></div>
+   <div class="grid">
+    <div class="tile"><span>🥟</span><b>Momos</b><br>Obviously. Is list mein sabse pehle yahi aana tha.</div>
+    <div class="tile"><span>🌸</span><b>Flowers</b><br>Tere liye rakha hua woh phool — because some people deserve one.</div>
+    <div class="tile"><span>🎀</span><b>Hairband</b><br>Tera hairband jo mere paas rehne ke bajaye mere hi paas reh gaya. 😭</div>
+    <div class="tile"><span>📱</span><b>Reels</b><br>Call pe screen share karke saath reels dekhna.</div>
+   </div>
+   <div class="note"><h2>7 August — your day ♡</h2><p>7 August ko calendar pe bas ek date nahi samajhna. It's the day someone as lovely as you arrived in this world. I hope every birthday brings you more happiness, more laughter, and all the little things your heart wishes for.</p></div>
+   <div class="note"><h2>Soumya means moon, Miru means sun ☀️🌙</h2><p>Tu moon aur main sun — alag roshni, alag raaste, par kya pretty coincidence hai na? Isliye tere naam ke saath chaand aur mere naam ke saath dhoop imagine hoti hai.</p></div>
+  </section>
+
+  <section class="page">
+   <div class="hero"><div class="eyebrow">page 04 · words for you</div><h1>Nazm chhod… 📖</h1><p>Ye tere liye, Miru ki taraf se.</p></div>
+   <div class="note poem">Nazm chhod, tujhpe kya likhu — kitab likhu,
+Khudko ek uljha sa sawaal,
+Aur tujhe uska suljha hua jawaab likhu.
+
+Main hoon ek arz-e-haqeeqat si,
+Tujhe ek beshkeemti khwaab likhu.
+Tere alawa koi dikhta hi nahi mujhe,
+Is aadat ko bemisaal likhu.
+
+Teri aankhein toh hain chaand jaisi,
+Teri zulfon ko sailaab likhu.
+Lafz kam pad jaate hain tere zikr mein,
+Ab bata, tujhe kitni baar likhu?</div>
+   <div class="note"><p style="text-align:center">Aur haan, ye poet banne ki koshish nahi — bas tu saamne ho toh words apne aap thode filmy ho jaate hain. 😭</p></div>
+  </section>
+
+  <section class="page">
+   <div class="hero"><div class="eyebrow">page 05 · our tiny universe</div><h1>Some moments I keep ♾️</h1><p>Kuch memories ka screenshot nahi hota, bas woh yaad reh jaati hain.</p></div>
+   <div class="memory"><span>📞</span><br><b>12 ghante wali calls</b><br>Itni der call pe rehna aur phir bhi baatein khatam na hona. Who even does that? Hum, apparently.</div>
+   <div class="memory"><span>🌅</span><br><b>Subah saath jagna</b><br>Raat ki baaton ke baad subah bhi ek doosre ke saath wake up karna — one of my favourite little memories.</div>
+   <div class="memory"><span>😂</span><br><b>Late-night laughter</b><br>Raat raat bhar call pe baat karna, random cheezon pe hasna, aur pata hi na chalna time kab nikal gaya.</div>
+   <div class="memory"><span>📱</span><br><b>Screen-share reels</b><br>Call pe screen share karke reels dekhna. Chhoti si activity, par saath ho toh fun double.</div>
+   <div class="memory"><span>🎀</span><br><b>Your hairband</b><br>Tera hairband mera hamesha pehenna — ek chhoti si cheez jo somehow ek memory ban gayi.</div>
+   <div class="note"><h2>The infinity anklet ♾️</h2><p>Jo infinity anklet maine tujhe diya tha, uska meaning mere liye simple hai: <b>no matter what happens, we'll still be infinite.</b> Infinity ka koi end nahi hota — aur main chahta tha ki us anklet ke saath ye thought bhi tere paas rahe. Bas ek little reminder of something meaningful.</p></div>
+   <div class="note"><h2>And that flower 🌷</h2><p>Tere liye jo phool rakha hai, woh bhi bas ek chhoti si baat hai. Kuch cheezein kehne ke liye words nahi, kabhi kabhi ek flower hi kaafi hota hai.</p></div>
+  </section>
+
+  <section class="page">
+   <div class="final">
+    <div class="eyebrow">page 06 · the last page, promise</div>
+    <div style="font-size:3rem;margin:22px">🌷💗🌙</div>
+    <div class="love">Love u, Soumyaaaaa ♡</div>
+    <p style="font-size:1.08rem;line-height:1.9;max-width:560px;margin:24px auto;color:#78576a">Thank you for every call, every laugh, every random reel, every little memory, and every version of you that I've got to know. Tu khush reh, hasti reh, aur apni ye pyaari si vibe kabhi mat khona.</p>
+    <p style="font:italic 1.5rem Georgia,serif;color:#9b5277">— tera Miru / Miruu ♡</p>
+    <div class="divider">✧ ♡ ✧</div>
+    <p style="color:#a77b91">P.S. Miru ki latkhor Miruu signing off. 😭</p>
+   </div>
+  </section>
+
+  <div class="pager"><button id="prev" disabled>← Previous</button><button id="next">Next page →</button></div>
+  <div class="footer">made with care · just for Soumya ♡</div>
+ </article>
+</main>
+<script>
+const SECRET_PASSWORD="somi";
+const pages=[...document.querySelectorAll(".page")], nav=[...document.querySelectorAll(".nav button")];
+let current=0;
+function showPage(n){
+ current=Math.max(0,Math.min(pages.length-1,n));
+ pages.forEach((p,i)=>p.classList.toggle("active",i===current));
+ nav.forEach((b,i)=>b.classList.toggle("active",i===current));
+ document.getElementById("progress").textContent=`Page ${current+1} of ${pages.length}`;
+ document.getElementById("prev").disabled=current===0;
+ document.getElementById("next").disabled=current===pages.length-1;
+ document.getElementById("next").textContent=current===pages.length-1?"The end ♡":"Next page →";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+nav.forEach(b=>b.addEventListener("click",()=>showPage(Number(b.dataset.page))));
+document.getElementById("prev").addEventListener("click",()=>showPage(current-1));
+document.getElementById("next").addEventListener("click",()=>showPage(current+1));
+document.getElementById("passwordForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(document.getElementById("password").value===SECRET_PASSWORD){
+  document.getElementById("lockScreen").style.display="none";
+  document.getElementById("site").style.display="block";
+  showPage(0); launchConfetti();
+ }else document.getElementById("error").textContent="Password galat hai! Ek baar aur try kar, Somi knows the secret. 💌";
+});
+function launchConfetti(){
+ const c=document.getElementById("confetti"),x=c.getContext("2d"),d=window.devicePixelRatio||1;
+ c.width=innerWidth*d;c.height=innerHeight*d;x.scale(d,d);
+ const colors=["#f3a6c4","#c5b4f2","#f8d68b","#e88fa9","#b5d9ce","#fff"];
+ const bits=Array.from({length:230},()=>({x:Math.random()*innerWidth,y:-Math.random()*innerHeight,s:3+Math.random()*7,v:2+Math.random()*5,dx:(Math.random()-.5)*2,r:Math.random()*6,dr:(Math.random()-.5)*.16,col:colors[Math.floor(Math.random()*colors.length)]}));
+ let f=0;function draw(){x.clearRect(0,0,innerWidth,innerHeight);bits.forEach(p=>{p.y+=p.v;p.x+=p.dx;p.r+=p.dr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.col;x.fillRect(-p.s/2,-p.s/2,p.s,p.s*.7);x.restore();if(p.y>innerHeight+10)p.y=-10});if(++f<300)requestAnimationFrame(draw);else x.clearRect(0,0,c.width,c.height)}draw();
+}
+const floatLayer=document.getElementById("stars");
+for(let i=0;i<24;i++){const el=document.createElement("span");el.className="float";el.textContent=["♡","✿","✧","🌸","♥"][i%5];el.style.left=Math.random()*100+"%";el.style.animationDuration=(9+Math.random()*13)+"s";el.style.animationDelay=(-Math.random()*18)+"s";el.style.fontSize=(13+Math.random()*18)+"px";floatLayer.appendChild(el)}
+</script>
+</body>
+</html>
